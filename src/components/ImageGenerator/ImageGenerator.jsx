@@ -8,7 +8,7 @@ export const ImageGenerator = () => {
 	const [loading, setLoading] = useState(false);
 
 	const imageGenerator = async () => {
-		if (inputRef.current.value === " ") {
+		if (inputRef.current.value === "") {
 			return 0;
 		}
 		setLoading(true);
@@ -19,7 +19,7 @@ export const ImageGenerator = () => {
 				headers: {
 					"content-Type": "application/json",
 					authorization:
-						"Bearer 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",
+						"Bearer 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",
 					"User-Agent": "Chrome",
 				},
 				body: JSON.stringify({
@@ -49,7 +49,7 @@ export const ImageGenerator = () => {
 				</div>
 				<div className="loading">
 					<div className={loading ? "loading-bar-full" : "loading-bar"}></div>
-					<div className={loading ? "loading-text" : "display:none"}>
+					<div className={loading ? "loading-text" : "display-none"}>
 						Loading...
 					</div>
 				</div>
@@ -60,6 +60,7 @@ export const ImageGenerator = () => {
 					ref={inputRef}
 					className="search-input"
 					placeholder="Describe what you want to see"
+					required
 				/>
 				<div
 					className="generate-btn"
